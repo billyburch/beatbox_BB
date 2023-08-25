@@ -21,7 +21,7 @@ RSpec.describe 'Node' do
     expect(list.head).to be_a(Node)
   end
 
-  it 'adds data into node' do
+  it 'adds data into node and returns' do
     list = LinkedList.new
     list.append("doop")
     expect(list.head.data).to eq("doop")
@@ -33,6 +33,8 @@ RSpec.describe 'Node' do
     expect(list.head.next_node).to eq(nil)
   end
 
+  # This is where the last block of iteration 1 gets tricky. Below two blocks are relevant to the one node Linked List. 
+
   it 'returns number of nodes in list' do
     list = LinkedList.new
     list.append("doop")
@@ -40,8 +42,19 @@ RSpec.describe 'Node' do
   end
 
   it 'returns data in string' do
-  list = LinkedList.new
-  list.append("doop")
-  expect(list.to_string).to eq("doop")
+    list = LinkedList.new
+    list.append("doop")
+    # binding.pry
+    expect(list.to_string).to eq("doop")
+  end
+
+# Beginning in the block below, we will move into multiple nodes.
+
+  it 'returns two nodes' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+    binding.pry
+    expect(list.head.data).to eq("doop")
   end
 end
