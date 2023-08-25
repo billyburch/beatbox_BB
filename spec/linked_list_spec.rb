@@ -42,6 +42,6 @@ RSpec.describe 'Node' do
   it 'returns data in string' do
   list = LinkedList.new
   list.append("doop")
-    expect(list.to_string).to eq("doop")
+  expect(list.to_string).to eq("doop")
   end
 end

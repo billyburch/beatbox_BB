@@ -1,7 +1,8 @@
 class LinkedList
-  attr_reader :head
+  attr_reader :head, :data
   def initialize
     @head = nil
+    @data = data
   end
 
   def append(data)
@@ -14,5 +15,9 @@ class LinkedList
     else
         1
     end
+  end
+
+  def to_string
+    p self.head.data
   end
 end
