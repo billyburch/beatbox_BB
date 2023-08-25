@@ -14,18 +14,28 @@ RSpec.describe 'Node' do
     list = LinkedList.new
     expect(list.head).to eq(nil)
   end
-  
+
+  it 'shows list.head returns a node' do
+    list = LinkedList.new
+    list.append("doop")
+    expect(list.head).to be_a(Node)
+  end
+
   it 'adds data into node' do
     list = LinkedList.new
     list.append("doop")
-    # binding.pry
     expect(list.head.data).to eq("doop")
   end
-  
+
   it 'adds show next_node as nil' do
     list = LinkedList.new
     list.append("doop")
-    # binding.pry
-    expect(list.head.data).to eq("doop")
+    expect(list.head.next_node).to eq(nil)
+  end
+
+  it 'returns 1 for list count' do
+    list = LinkedList.new
+    list.append("doop")
+    expect(list.count).to eq(1)
   end
 end
