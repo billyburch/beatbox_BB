@@ -13,7 +13,7 @@ RSpec.describe 'Node' do
     expect(node.data).to eq("plop")
   end
 
-  xit 'returns nil for next node' do
+  it 'returns nil for next_node' do
     node = Node.new("plop")
     expect(node.next_node).to eq(nil)
   end
