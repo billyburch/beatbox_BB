@@ -5,8 +5,20 @@ class LinkedList
     @data = data
   end
 
+  # def append(data)
+  #   @head = Node.new(data)
+  # end 
+
   def append(data)
-    @head = Node.new(data)
+    if(head.nil?)
+      @head = Node.new(data, nil)
+    else
+      last_node = @head
+      while(!last_node.next_node.nil?)
+        last_node = last_node.next_node
+      end
+      last_node.next_node = Node.new(data, nil)
+    end
   end 
 
   def count
@@ -18,11 +30,11 @@ class LinkedList
   end
 
   def to_string
-    p self.head.data
+    p @head.data
   end
 
-  def last_node(node)
-    return node if node.tail?
-    last_node(node.next_node)
-  end
+  # def last_node(node)
+  #   return node if node.tail?
+  #   last_node(node.next_node)
+  # end
 end

@@ -33,7 +33,7 @@ RSpec.describe 'Node' do
     expect(list.head.next_node).to eq(nil)
   end
 
-  # This is where the last block of iteration 1 gets tricky. Below two blocks are relevant to the one node Linked List. 
+  # This is where the last block of xiteration 1 gets tricky. Below two blocks are relevant to the one node Linked List. 
 
   it 'returns number of nodes in list' do
     list = LinkedList.new
@@ -57,20 +57,35 @@ RSpec.describe 'Node' do
     expect(list).to be_a(LinkedList)
   end
 
+  it 'returns head data argument' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+    # binding.pry
+    expect(list.head.data).to eq("doop")
+  end
+
   it 'returns most recent data argument' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
-    expect(list.head.data).to eq("deep")
+    # binding.pry
+    expect(list.head.next_node.data).to eq("deep")
   end
 
-  it 'find tail returns tail' do
+  xit 'returns number of nodes in list' do
     list = LinkedList.new
-    # list.append("doop")
+    list.append("doop")
     list.append("deep")
-    result = list.last_node(list.head)
-    expect(result).to be_a(Node)
+    expect(list.count).to eq(2)
+  end
+  
+  xit 'returns all data in string' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+    # binding.pry
+    expect(list.to_string).to eq("doop deep")
   end
 
-  # expect(list.data).to eq("deep")
 end
