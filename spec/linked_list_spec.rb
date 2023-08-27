@@ -61,7 +61,16 @@ RSpec.describe 'Node' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
-    # binding.pry
     expect(list.head.data).to eq("deep")
   end
+
+  it 'find tail returns tail' do
+    list = LinkedList.new
+    # list.append("doop")
+    list.append("deep")
+    result = list.last_node(list.head)
+    expect(result).to be_a(Node)
+  end
+
+  # expect(list.data).to eq("deep")
 end

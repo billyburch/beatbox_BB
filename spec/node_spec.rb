@@ -26,11 +26,9 @@ RSpec.describe 'Node' do
 
   it 'next_node can change' do
     node = Node.new("plop")
-    data = 'pants'
-
+    data = "bleep"
     node.next_node = data
-    result = node.next_node
-
-    expect(data).to eq(result)
+    # binding.pry
+    expect(node.next_node).to eq("bleep")
   end
 end
