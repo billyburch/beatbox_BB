@@ -7,7 +7,7 @@ RSpec.describe 'Node' do
   
   it 'list exists as object' do
     list = LinkedList.new
-    expect(list = LinkedList.new).to be_a(LinkedList)
+    expect(list).to be_a(LinkedList)
   end
 
   it 'returns nil for list.head' do
@@ -27,7 +27,7 @@ RSpec.describe 'Node' do
     expect(list.head.data).to eq("doop")
   end
 
-  it 'adds show next_node as nil' do
+  it 'shows next_node as nil' do
     list = LinkedList.new
     list.append("doop")
     expect(list.head.next_node).to eq(nil)
@@ -44,17 +44,24 @@ RSpec.describe 'Node' do
   it 'returns data in string' do
     list = LinkedList.new
     list.append("doop")
-    # binding.pry
     expect(list.to_string).to eq("doop")
   end
 
 # Beginning in the block below, we will move into multiple nodes.
 
-  it 'returns two nodes' do
+  it 'still returns list as object' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
-    binding.pry
-    expect(list.head.data).to eq("doop")
+    # binding.pry
+    expect(list).to be_a(LinkedList)
+  end
+
+  it 'returns most recent data argument' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+    # binding.pry
+    expect(list.head.data).to eq("deep")
   end
 end

@@ -1,5 +1,5 @@
 class LinkedList
-  attr_reader :head, :data
+  attr_accessor :head, :data
   def initialize
     @head = nil
     @data = data
