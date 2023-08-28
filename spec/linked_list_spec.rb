@@ -123,4 +123,45 @@ RSpec.describe 'Node' do
     # binding.pry
     expect(list.count).to eq(3)
   end
+
+  it 'inserts data into list' do
+    list = LinkedList.new
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
+    list.insert(1, "woo")
+    # binding.pry
+    expect(list.to_string).to eq("dop woo plop suu")
+  end
+
+  it 'populates list with different methods' do
+    list = LinkedList.new
+    list.append("shi")
+    list.append("shu")
+    list.prepend("deep")
+    list.insert(1, "woo")
+    list.append("blop")
+    binding.pry
+    expect(list.to_string).to eq("deep woo shi shu blop")
+  end
+ 
+  xit 'finds and returns desired node data' do
+    list = LinkedList.new
+    list.append("shi")
+    list.append("shu")
+    list.prepend("deep")
+    list.insert(1, "woo")
+    list.append("blop")
+    expect(list.find(2, 1)).to eq("shi")
+  end
+
+  xit 'finds and returns desired node data' do
+    list = LinkedList.new
+    list.append("shi")
+    list.append("shu")
+    list.prepend("deep")
+    list.insert(1, "woo")
+    list.append("blop")
+    expect(list.find(1, 3)).to eq("woo shi shu")
+  end
 end

@@ -43,7 +43,6 @@ class LinkedList
   def to_string
     list_data = []
     current = @head
-
     while current.next_node != nil 
       list_data << current.data
       current = current.next_node
@@ -58,4 +57,14 @@ class LinkedList
     @head = node
   end
 
+  def insert(node_position, data)
+    current = head
+    node = Node.new(data) 
+    node.next_node = current.next_node
+    current.next_node = node
+  end
+
+  def find(node_position, how_many)
+    node = 
+  end
 end
