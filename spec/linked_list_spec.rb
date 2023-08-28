@@ -105,4 +105,22 @@ RSpec.describe 'Node' do
     list.append("suu")
     expect(list.to_string).to eq("plop suu")
   end
+
+  it 'prepend adds to front of list' do
+    list = LinkedList.new
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
+    # binding.pry
+    expect(list.to_string).to eq("dop plop suu")
+  end
+
+  it 'returns number of nodes in list' do
+    list = LinkedList.new
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
+    # binding.pry
+    expect(list.count).to eq(3)
+  end
 end

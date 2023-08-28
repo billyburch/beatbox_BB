@@ -52,12 +52,10 @@ class LinkedList
     return list_data.join(" ")
   end
 
-  def prepend
-    
+  def prepend(data)
+    node = Node.new(data)
+    node.next_node = head
+    @head = node
   end
 
-  # def last_node(node)
-  #   return node if node.tail?
-  #   last_node(node.next_node)
-  # end
 end
