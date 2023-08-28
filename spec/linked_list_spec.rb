@@ -73,18 +73,19 @@ RSpec.describe 'Node' do
     expect(list.head.next_node.data).to eq("deep")
   end
 
-  xit 'returns number of nodes in list' do
-    list = LinkedList.new
-    list.append("doop")
-    list.append("deep")
-    expect(list.count).to eq(2)
-  end
-  
-  xit 'returns all data in string' do
+  it 'returns number of nodes in list' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
     # binding.pry
+    expect(list.count).to eq(2)
+  end
+  
+  it 'returns all data in string' do
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+    binding.pry
     expect(list.to_string).to eq("doop deep")
   end
 

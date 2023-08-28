@@ -17,20 +17,60 @@ class LinkedList
       while(!last_node.next_node.nil?)
         last_node = last_node.next_node
       end
-      last_node.next_node = Node.new(data, nil)
+        last_node.next_node = Node.new(data, nil)
     end
   end 
 
+  # def count
+  #   if head == nil
+  #       0    
+  #   else
+  #       1
+  #   end
+  # end
+  
+  # def count(node, counter)
+  #  return counter if node.tail?
+  #   count(node.next_node, counter += 1)
+  # end
+  # end
+
   def count
-    if head == nil
-        0    
-    else
-        1
+    return 0 if !@head
+    node = @head
+    counter = 0
+    while node do
+      node = node.next_node
+      counter += 1
     end
+    counter
   end
 
+  # def to_string
+  #   @data
+  # end
+
+  # def to_string
+  #   result = []
+  #   current = @head
+
+  #   while current.next_node != nil 
+  #     result << current.data
+  #     current = current.next_node
+  #   end
+  #   result << current.data
+  #   return result
+  # end
   def to_string
-    p @head.data
+    list_data = []
+    current = @head
+
+    while current.next_node != nil 
+      list_data << current.data
+      current = current.next_node
+    end
+    list_data << current.data
+    return list_data.join(" ")
   end
 
   # def last_node(node)
