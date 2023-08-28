@@ -28,12 +28,6 @@ class LinkedList
   #       1
   #   end
   # end
-  
-  # def count(node, counter)
-  #  return counter if node.tail?
-  #   count(node.next_node, counter += 1)
-  # end
-  # end
 
   def count
     return 0 if !@head
@@ -46,21 +40,6 @@ class LinkedList
     counter
   end
 
-  # def to_string
-  #   @data
-  # end
-
-  # def to_string
-  #   result = []
-  #   current = @head
-
-  #   while current.next_node != nil 
-  #     result << current.data
-  #     current = current.next_node
-  #   end
-  #   result << current.data
-  #   return result
-  # end
   def to_string
     list_data = []
     current = @head
@@ -71,6 +50,10 @@ class LinkedList
     end
     list_data << current.data
     return list_data.join(" ")
+  end
+
+  def prepend
+    
   end
 
   # def last_node(node)

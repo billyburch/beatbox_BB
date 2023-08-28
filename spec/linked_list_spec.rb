@@ -85,8 +85,24 @@ RSpec.describe 'Node' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
-    binding.pry
     expect(list.to_string).to eq("doop deep")
   end
 
+  it 'returns list object' do
+    list = LinkedList.new
+    expect(list).to be_a(LinkedList)
+  end
+
+  it 'returns argument data' do
+    list = LinkedList.new
+    list.append("plop")
+    expect(list.to_string).to eq("plop")
+  end
+
+  it 'returns joined argument data' do
+    list = LinkedList.new
+    list.append("plop")
+    list.append("suu")
+    expect(list.to_string).to eq("plop suu")
+  end
 end

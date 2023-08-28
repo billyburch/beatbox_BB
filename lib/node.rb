@@ -8,5 +8,4 @@ class Node
   def tail?
     next_node.nil?
   end 
-
 end
