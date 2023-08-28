@@ -141,7 +141,7 @@ RSpec.describe 'Node' do
     list.prepend("deep")
     list.insert(1, "woo")
     list.append("blop")
-    binding.pry
+    # binding.pry
     expect(list.to_string).to eq("deep woo shi shu blop")
   end
  
