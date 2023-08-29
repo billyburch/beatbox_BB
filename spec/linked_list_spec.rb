@@ -131,7 +131,6 @@ RSpec.describe 'Node' do
     list.append("suu")
     list.prepend("dop")
     list.insert(1, "woo")
-    # binding.pry
     expect(list.to_string).to eq("dop woo plop suu")
   end
 
@@ -140,18 +139,9 @@ RSpec.describe 'Node' do
     list.append("plop")
     list.append("suu")
     list.prepend("dop")
-    # binding.pry
     list.insert(2, "woo")
     expect(list.to_string).to eq("dop plop woo suu")
   end
-
-  # it 'inserts data into list3' do
-  #   list = LinkedList.new
-  #   list.append("plop")
-  #   list.insert(0, "woo")
-  #   # binding.pry
-  #   expect(list.to_string).to eq("woo plop")
-  # end
 
   it 'populates list with different methods' do
     list = LinkedList.new
@@ -164,17 +154,18 @@ RSpec.describe 'Node' do
     expect(list.to_string).to eq("deep woo shi shu blop")
   end
  
-  xit 'finds and returns desired node data' do
+  it 'finds and returns desired node data' do
     list = LinkedList.new
     list.append("shi")
     list.append("shu")
     list.prepend("deep")
     list.insert(1, "woo")
     list.append("blop")
+    # binding.pry
     expect(list.find(2, 1)).to eq("shi")
   end
 
-  xit 'finds and returns desired node data' do
+  it 'finds and returns desired node data' do
     list = LinkedList.new
     list.append("shi")
     list.append("shu")
@@ -183,4 +174,38 @@ RSpec.describe 'Node' do
     list.append("blop")
     expect(list.find(1, 3)).to eq("woo shi shu")
   end
+
+  it 'returns true if node data exists' do
+    list = LinkedList.new
+    list.append("shi")
+    list.append("shu")
+    list.prepend("deep")
+    list.insert(1, "woo")
+    list.append("blop")
+    # binding.pry
+    expect(list.includes?("deep")).to eq(true)
+  end
+
+  it 'returns false if node data does not exist' do
+    list = LinkedList.new
+    list.append("shi")
+    list.append("shu")
+    list.prepend("deep")
+    list.insert(1, "woo")
+    list.append("blop")
+    binding.pry
+    expect(list.includes?("dep")).to eq(false)
+  end
+
+  xit 'returns false if node data does not exist' do
+    list = LinkedList.new
+    list.append("shi")
+    list.append("shu")
+    list.prepend("deep")
+    list.insert(1, "woo")
+    list.append("blop")
+    binding.pry
+    expect(list.includes?("dep")).to eq(false)
+  end
+
 end

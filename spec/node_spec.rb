@@ -15,20 +15,13 @@ RSpec.describe 'Node' do
 
   it 'returns nil for next_node' do
     node = Node.new("plop") 
-    #    binding.pry
     expect(node.next_node).to eq(nil)
-  end
-
-  it 'tail? method returns true for next_node nil' do
-    node = Node.new("plop")
-    expect(node.tail?).to eq(true)
   end
 
   it 'next_node can change' do
     node = Node.new("plop")
     data = "bleep"
     node.next_node = data
-    # binding.pry
     expect(node.next_node).to eq("bleep")
   end
 end
