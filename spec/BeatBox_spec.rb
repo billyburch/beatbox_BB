@@ -28,5 +28,3 @@ RSpec.describe 'Node' do
   end
 
 end
-
-# class w/in a class - within BeatBox, I have access to everything in LinkedList and can utilize that here
