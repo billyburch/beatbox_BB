@@ -243,4 +243,15 @@ RSpec.describe 'Node' do
     expect(list.pop).to eq("shu")    
     expect(list.to_string).to eq("deep woo shi")
   end
+
+  it 'returns list reflective # of pops in test' do
+    list = LinkedList.new
+    list.append("shi")
+    list.append("shu")
+    list.prepend("deep")
+    list.insert(1, "woo")
+    list.append("blop")
+    expect(list.pop).to eq("blop")
+    expect(list.to_string).to eq("deep woo shi shu")
+  end
 end
