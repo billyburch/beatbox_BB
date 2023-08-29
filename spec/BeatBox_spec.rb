@@ -21,6 +21,12 @@ RSpec.describe 'Node' do
     expect(bb.list.head).to eq(nil)
   end
 
+  it 'appends string data to object' do
+    bb = BeatBox.new
+    bb.append("deep doo ditt")
+    expect(bb.list.head.data).to eq("deep")
+  end
+
 end
 
 # class w/in a class - within BeatBox, I have access to everything in LinkedList and can utilize that here
