@@ -24,7 +24,6 @@ RSpec.describe 'Node' do
   it 'adds data into node and returns' do
     list = LinkedList.new
     list.append("doop")
-    # binding.pry
     expect(list.head.data).to eq("doop")
   end
 
@@ -54,7 +53,6 @@ RSpec.describe 'Node' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
-    # binding.pry
     expect(list).to be_a(LinkedList)
   end
 
@@ -62,7 +60,6 @@ RSpec.describe 'Node' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
-    # binding.pry
     expect(list.head.data).to eq("doop")
   end
 
@@ -70,7 +67,6 @@ RSpec.describe 'Node' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
-    # binding.pry
     expect(list.head.next_node.data).to eq("deep")
   end
 
@@ -78,7 +74,6 @@ RSpec.describe 'Node' do
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
-    # binding.pry
     expect(list.count).to eq(2)
   end
   
@@ -112,7 +107,6 @@ RSpec.describe 'Node' do
     list.append("plop")
     list.append("suu")
     list.prepend("dop")
-    # binding.pry
     expect(list.to_string).to eq("dop plop suu")
   end
 
@@ -121,7 +115,6 @@ RSpec.describe 'Node' do
     list.append("plop")
     list.append("suu")
     list.prepend("dop")
-    # binding.pry
     expect(list.count).to eq(3)
   end
 
@@ -150,7 +143,6 @@ RSpec.describe 'Node' do
     list.prepend("deep")
     list.insert(1, "woo")
     list.append("blop")
-    # binding.pry
     expect(list.to_string).to eq("deep woo shi shu blop")
   end
  
@@ -161,7 +153,6 @@ RSpec.describe 'Node' do
     list.prepend("deep")
     list.insert(1, "woo")
     list.append("blop")
-    # binding.pry
     expect(list.find(2, 1)).to eq("shi")
   end
 
@@ -182,7 +173,6 @@ RSpec.describe 'Node' do
     list.prepend("deep")
     list.insert(1, "woo")
     list.append("blop")
-    # binding.pry
     expect(list.includes?("deep")).to eq(true)
   end
 
@@ -193,7 +183,6 @@ RSpec.describe 'Node' do
     list.prepend("deep")
     list.insert(1, "woo")
     list.append("blop")
-    # binding.pry
     expect(list.includes?("dep")).to eq(false)
   end
 
@@ -204,7 +193,6 @@ RSpec.describe 'Node' do
     list.prepend("deep")
     list.insert(1, "woo")
     list.append("blop")
-    # binding.pry
     expect(list.includes?("dep")).to eq(false)
   end
   
@@ -215,9 +203,6 @@ RSpec.describe 'Node' do
     list.prepend("deep")
     list.insert(1, "woo")
     list.append("blop")
-    # list.pop
-    # list.pop
-    # binding.pry
     expect(list.pop).to eq("blop")
   end
 
