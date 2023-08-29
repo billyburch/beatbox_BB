@@ -208,36 +208,39 @@ RSpec.describe 'Node' do
     expect(list.includes?("dep")).to eq(false)
   end
   
-  xit 'removes and returns last node' do
+  it 'removes and returns last node' do
     list = LinkedList.new
     list.append("shi")
     list.append("shu")
     list.prepend("deep")
     list.insert(1, "woo")
     list.append("blop")
+    # list.pop
+    # list.pop
     # binding.pry
     expect(list.pop).to eq("blop")
   end
 
-  xit 'removes and returns last node' do
+  it 'removes and returns last node' do
     list = LinkedList.new
     list.append("shi")
     list.append("shu")
     list.prepend("deep")
     list.insert(1, "woo")
     list.append("blop")
-    # binding.pry
+    expect(list.pop).to eq("blop")
     expect(list.pop).to eq("shu")
   end
 
-  xit 'returns remaining nodes' do
+  it 'returns remaining nodes' do
     list = LinkedList.new
     list.append("shi")
     list.append("shu")
     list.prepend("deep")
     list.insert(1, "woo")
     list.append("blop")
-    # binding.pry
+    expect(list.pop).to eq("blop")
+    expect(list.pop).to eq("shu")    
     expect(list.to_string).to eq("deep woo shi")
   end
 end

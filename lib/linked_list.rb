@@ -46,7 +46,7 @@ class LinkedList
   end
 
   def insert(index, data)
-    return "no list" if !head
+    return "empty list" if !head
     current_node = head
     current_index = 0
     next_node_index = 1
@@ -61,7 +61,7 @@ class LinkedList
   end
 
   def find(index, nodes_returned)
-    return "no list" if !head
+    return "empty list" if !head
       current_node = head
       current_index = 0
       find_result = []
@@ -77,7 +77,7 @@ class LinkedList
   end
   
   def includes?(data)
-    return "no list" if !head
+    return "empty list" if !head
     current_node = head
       if current_node.data == data
         return true
@@ -86,7 +86,30 @@ class LinkedList
     false
   end
 
-  
-
+  def pop
+    return "empty list" if !head
+    current_node = head
+    # last_node = current_node.next_node.data
+    # binding.pry
+    while !current_node.next_node.nil?
+      new_tail = current_node
+      current_node = current_node.next_node
+    end
+    # binding.pry
+    new_tail.next_node = nil
+    current_node.data
+    # last_node
+    # binding.pry
+  end
+  # def pop
+  #   return "empty list" if !head
+  #   list_data = []
+  #   current_node = head
+  #     while current_node
+  #       list_data << current_node.data
+  #       current_node = current_node.next_node
+  #     end
+  #       list_data.pop
+  # end
   
 end
