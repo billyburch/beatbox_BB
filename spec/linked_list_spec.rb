@@ -24,6 +24,7 @@ RSpec.describe 'Node' do
   it 'adds data into node and returns' do
     list = LinkedList.new
     list.append("doop")
+    # binding.pry
     expect(list.head.data).to eq("doop")
   end
 
@@ -33,7 +34,7 @@ RSpec.describe 'Node' do
     expect(list.head.next_node).to eq(nil)
   end
 
-  # This is where the last block of xiteration 1 gets tricky. Below two blocks are relevant to the one node Linked List. 
+  # This is where the last block of iteration 1 gets tricky. Below two blocks are relevant to the one node Linked List. 
 
   it 'returns number of nodes in list' do
     list = LinkedList.new
@@ -133,6 +134,24 @@ RSpec.describe 'Node' do
     # binding.pry
     expect(list.to_string).to eq("dop woo plop suu")
   end
+
+  it 'inserts data into different index' do
+    list = LinkedList.new
+    list.append("plop")
+    list.append("suu")
+    list.prepend("dop")
+    # binding.pry
+    list.insert(2, "woo")
+    expect(list.to_string).to eq("dop plop woo suu")
+  end
+
+  # it 'inserts data into list3' do
+  #   list = LinkedList.new
+  #   list.append("plop")
+  #   list.insert(0, "woo")
+  #   # binding.pry
+  #   expect(list.to_string).to eq("woo plop")
+  # end
 
   it 'populates list with different methods' do
     list = LinkedList.new
