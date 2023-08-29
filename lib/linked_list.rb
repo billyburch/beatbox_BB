@@ -1,18 +1,19 @@
 class LinkedList
-  attr_reader :head
+  attr_accessor :head
   def initialize
     @head = nil
   end
 
   def append(data)
-    if(head.nil?)
-        @head = Node.new(data, nil)
+    new_node = Node.new(data)
+    if head.nil?
+        @head = Node.new(data)
     else
-      last_node = @head
-    while(!last_node.next_node.nil?)
-      last_node = last_node.next_node
+      current_node = @head
+    while(!current_node.next_node.nil?)
+      current_node = current_node.next_node
     end
-      last_node.next_node = Node.new(data, nil)
+      current_node.next_node = Node.new(data, nil)
     end
   end 
 
@@ -84,5 +85,8 @@ class LinkedList
     current_node = current_node.next_node
     false
   end
- 
+
+  
+
+  
 end
